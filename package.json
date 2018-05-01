@@ -1,0 +1,13 @@
+{
+  "name": "qrcanvas-gatewayapi",
+  "scripts": {
+    "prebuild": "rm -rf dist",
+    "build": "node scripts/build",
+    "deploy": "sh scripts/build-gh.sh",
+    "lint": "eslint src"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "qrcanvas": "^2.0.0"
+  }
+}
