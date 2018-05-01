@@ -1,19 +1,19 @@
-## QR
-This repo has all the necessary binaries to execute canvas correctly within the lambda environment.
-
-Everything is checked in to node_modules & lib.
-
+## AWS QR Code Generator
 This project uses https://github.com/gera2ld/qrcanvas to generate QR codes.
-Check that repo for the API and alter handler.js as needed.
+Check that repo for the API and alter handler.js as needed.  All necessary
+binaries for executing canvas are checked in to node_modules & lib. This allows
+the following:
+
+* alter/test changes locally by executing in a lambda docker container
+* deploy directly with serverless framework to AWS gatewayapi + lambda
+* steps included on how to test vs deployed endpoint
 
 
 ### run with docker locally
 ````text
-
 docker run --rm -v "%cd%:/var/task" lambci/lambda:nodejs6.10 handler.endpoint "{\"data\": { \"url\": \"https://google.com\" } }"
 
 ````
-
 
 ### Deploy to AWS using serverless
 ````text
@@ -22,7 +22,6 @@ cd aws-gatewayapi-lambda-node-qrcode-generator
 npm i serverless -g
 sls deploy
 ````
-
 
 ### Test vs deployed serverless endpoint
 ````text
